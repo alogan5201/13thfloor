@@ -21,58 +21,32 @@
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,300,400,400i,600,700,800" rel="stylesheet">
    <script src="https://sandboxmulti.com/assets/cdn/js/jquery-2.1.3.min.js"></script>
    <script src="https://sandboxmulti.com/assets/cdn/js/jquery.velocity.min.js"></script>
+
    <script src="https://sandboxmulti.com/assets/cdn/js/velocity.ui.js"></script>
    <script>
-      let video = document.getElementById("myVideo");
-      let videoWrapper = document.querySelector("#video-wrapper");
-      //video.play();
-      /*
-          $(".video-wrapper").velocity("fadeOut", {
-          duration: 2000,
-          delay: 8000
-      });*/
+      $(window).on("load", function () {
+         let video = document.getElementById("myVideo");
+         let videoWrapper = document.querySelector("#video-wrapper");
 
+         $("#video-header-content").velocity("fadeIn", {
+            duration: 2000
 
-      $("#video-header-content").velocity("fadeIn", {
-         duration: 2000
-
-      });
+         });
 
 
 
-      $("#video-header-content").velocity("fadeOut", {
+         $("#video-header-content").velocity("fadeOut", {
 
-         duration: 1000,
-         delay: 5000
-      });
-      let videoContentWrapper = document.querySelector("#video-header-content");
-      video.onended = function () {
-         setTimeout(function () {
-            videoContentWrapper.classList.add("hide")
-         }, 7000);
-      }
-
-      /*
-      let message = document.querySelector(".message");
-      video.onended = function(){
-      message.setAttribute("class", "visible");
-      videoWrapper.setAttribute("class", "hide");
-      }
-      */
-
-
-      // listen for the event that fires when your video has finished playing
-      /*
-      function myFunction(){
-          const firstWrapper = document.querySelector("#wrapper");
-          const image = document.getElementById("myIMG");
-         video.play(); 
-         setTimeout(function(){ video.pause(); }, 7000);
-         //setTimeout(function(){ video.setAttribute("class", "hide") }, 7000);
-      }
-      myFunction();
-
-      */
+            duration: 1000,
+            delay: 5000
+         });
+         let videoContentWrapper = document.querySelector("#video-header-content");
+         video.onended = function () {
+            setTimeout(function () {
+               videoContentWrapper.classList.add("hide")
+            }, 7000);
+         }
+      })
    </script>
    <style>
       #video-header-content {
